@@ -1,0 +1,13 @@
+# 当前通过 WORKSPACE 配置外部依赖 可以通过以下命令切换到 MODULE 
+# 是否启用
+# common --enable_bzlmod
+# rules_apple 等库从下面的地址拉取
+# common --registry=https://bcr.bilibili.co
+module(
+    name = "cmake_bazel_demo",
+    version = "1.0",
+)
+
+bazel_dep(name = "rules_apple", version = "3.1.1", repo_name = "build_bazel_rules_apple")
+bazel_dep(name = "apple_support", version = "1.11.1", repo_name = "build_bazel_apple_support")
+bazel_dep(name = "rules_xcodeproj", version = "1.13.0")
